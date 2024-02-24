@@ -1,9 +1,12 @@
-import { Header } from "@/components/layout";
+import { About, Contact, Hero, HomeMenu } from "../components/layout";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
+      <HomeMenu />
+      <About />
+      <Contact />
     </>
   );
 }
