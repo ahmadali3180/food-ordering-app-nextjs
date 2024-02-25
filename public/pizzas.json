@@ -1,0 +1,64 @@
+{
+  "pizzas": [
+    {
+      "flavor": "Margherita",
+      "description": "Classic pizza topped with tomato sauce, mozzarella cheese, fresh basil leaves, and a drizzle of olive oil."
+    },
+    {
+      "flavor": "Pepperoni",
+      "description": "Traditional favorite with tomato sauce, mozzarella cheese, and generous slices of pepperoni."
+    },
+    {
+      "flavor": "Vegetarian",
+      "description": "Delicious combination of tomato sauce, mozzarella cheese, mushrooms, olives, onions, bell peppers, and fresh tomatoes."
+    },
+    {
+      "flavor": "Hawaiian",
+      "description": "Tropical delight featuring tomato sauce, mozzarella cheese, ham, and pineapple chunks."
+    },
+    {
+      "flavor": "BBQ Chicken",
+      "description": "Savory pizza topped with barbecue sauce, mozzarella cheese, grilled chicken chunks, red onions, and cilantro."
+    },
+    {
+      "flavor": "Chicken Tikka",
+      "description": "Spicy and flavorful pizza loaded with cheese, chicken tikka, mushrooms, olives, sweet corn, onions, tomatoes, and bell peppers."
+    },
+    {
+      "flavor": "Supreme",
+      "description": "Ultimate pizza experience with tomato sauce, mozzarella cheese, pepperoni, sausage, mushrooms, bell peppers, onions, and black olives."
+    },
+    {
+      "flavor": "Mediterranean",
+      "description": "Mouthwatering combination of tomato sauce, feta cheese, spinach, sun-dried tomatoes, kalamata olives, and a hint of garlic."
+    },
+    {
+      "flavor": "Four Cheese",
+      "description": "A cheese lover's dream with tomato sauce, mozzarella, parmesan, cheddar, and feta cheese."
+    },
+    {
+      "flavor": "Meat Lover's",
+      "description": "Hearty pizza packed with tomato sauce, mozzarella cheese, pepperoni, sausage, bacon, and ham."
+    },
+    {
+      "flavor": "Veggie Delight",
+      "description": "Fresh and colorful pizza topped with tomato sauce, mozzarella cheese, spinach, broccoli, red onions, mushrooms, and black olives."
+    },
+    {
+      "flavor": "Buffalo Chicken",
+      "description": "Fiery pizza featuring buffalo sauce, mozzarella cheese, spicy chicken, red onions, and ranch dressing drizzle."
+    },
+    {
+      "flavor": "Pesto Chicken",
+      "description": "Gourmet pizza with basil pesto sauce, mozzarella cheese, grilled chicken, sun-dried tomatoes, and pine nuts."
+    },
+    {
+      "flavor": "Greek",
+      "description": "Mediterranean-inspired pizza with olive oil, mozzarella cheese, spinach, artichokes, feta cheese, red onions, and kalamata olives."
+    },
+    {
+      "flavor": "Tex-Mex",
+      "description": "Bold and zesty pizza featuring salsa, mozzarella cheese, seasoned ground beef, black beans, corn, jalapenos, and cheddar cheese."
+    }
+  ]
+}

@@ -15,11 +15,11 @@ function Hero() {
           delicious joy in life
         </p>
         <div className="flex gap-4 text-sm">
-          <button className="flex gap-2 uppercase bg-primary px-4 py-2 rounded-full text-white  items-center">
+          <button className="flex border-0 justify-center gap-2 uppercase bg-primary px-4 py-2 rounded-full text-white items-center">
             Order Now
             <Right />
           </button>
-          <button className="flex items-center gap-2 py-2 text-gray-600 font-semibold ">
+          <button className="flex border-0 items-center gap-2 py-2 text-gray-600 font-semibold ">
             Learn More
             <Right />
           </button>

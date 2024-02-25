@@ -12,7 +12,7 @@ function LoginPage() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await signIn("credentials", { email, password });
+    await signIn("credentials", { email, password, callbackUrl: "/" });
     setLoading(false);
   };
   return (
@@ -42,7 +42,12 @@ function LoginPage() {
         <div className="my-4 text-center text-gray-600 text-sm">
           or Login with social provider
         </div>
-        <button disabled={loading} className="flex gap-4 justify-center">
+        <button
+          disabled={loading}
+          className="flex gap-4 justify-center"
+          type="button"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+        >
           <Image src={"/google.png"} alt="" width={24} height={24} /> Login With
           Google
         </button>

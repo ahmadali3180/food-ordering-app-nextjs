@@ -1,12 +1,24 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 import * as mongoose from "mongoose";
 import { User } from "../../../models/User.js";
 import bcrypt from "bcrypt";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import clientPromise from "../../../../libs/mongoConnect";
 
 const handler = NextAuth({
+  adapter: MongoDBAdapter(clientPromise),
   secret: process.env.SECRET,
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        prompt: "consent",
+        access_type: "offline",
+      },
+    }),
     CredentialsProvider({
       // The name to display on the sign in form (e.g. 'Sign in with...')
       name: "Credentials",

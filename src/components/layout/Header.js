@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 function Header() {
   const session = useSession();
@@ -9,6 +10,7 @@ function Header() {
 
   const handleLogout = async () => {
     signOut();
+    redirect("/login");
   };
   return (
     <header className="flex justify-between items-center">
@@ -34,7 +36,7 @@ function Header() {
         {status === "authenticated" && (
           <button
             href={"/login"}
-            className="bg-primary text-white px-8 py-2 rounded-full"
+            className="bg-primary border-0 text-white px-8 py-2 rounded-full"
             onClick={handleLogout}
           >
             Logout
@@ -46,7 +48,7 @@ function Header() {
               Login
             </Link>
             <Link
-              className="bg-primary text-white px-8 py-2 rounded-full"
+              className="bg-primary border-0 text-white px-8 py-2 rounded-full"
               href={"/register"}
             >
               Register

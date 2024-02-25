@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { redirect } from "next/navigation";
 
 function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -77,7 +78,12 @@ function RegisterPage() {
         <div className="my-4 text-center text-gray-600 text-sm">
           or Login with social provider
         </div>
-        <button disabled={creatingUser} className="flex gap-4 justify-center">
+        <button
+          disabled={creatingUser}
+          className="flex gap-4 justify-center"
+          type="button"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+        >
           <Image src={"/google.png"} alt="" width={24} height={24} /> Login With
           Google
         </button>
