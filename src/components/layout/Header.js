@@ -40,7 +40,7 @@ function Header() {
             Logout
           </button>
         )}
-        {status !== "authenticated" && (
+        {status === "unauthenticated" && (
           <>
             <Link href={"/login"} className="hover:text-primary">
               Login
