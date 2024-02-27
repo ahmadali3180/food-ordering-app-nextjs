@@ -7,10 +7,20 @@ import { redirect } from "next/navigation";
 function Header() {
   const session = useSession();
   const status = session.status;
+  const userData = session.data?.user;
+  let userName = userData?.name || userData?.email;
+  if (userName) {
+    if (userName.split(" ").length == 2) {
+      var [firstName, lastName] = userName.split(" ");
+      userName = `${firstName} ${lastName}`;
+    } else if (userName.split(" ").length == 3) {
+      var [firstName, middleName, lastName] = userName.split(" ");
+      userName = `${middleName}`;
+    }
+  }
 
   const handleLogout = async () => {
-    signOut();
-    redirect("/login");
+    await signOut(null, (callback) => callback("/login"));
   };
   return (
     <header className="flex justify-between items-center">
@@ -32,15 +42,23 @@ function Header() {
         </Link>
       </nav>
 
-      <nav className="flex gap-4 text-gray-400 font-semibold items-center">
+      <nav className="flex gap-6 text-gray-400 font-semibold items-center">
         {status === "authenticated" && (
-          <button
-            href={"/login"}
-            className="bg-primary border-0 text-white px-8 py-2 rounded-full"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+          <>
+            <Link
+              href={"/profile"}
+              className="hover:text-primary/85 w-full tracking-tighter whitespace-nowrap"
+            >
+              Hello, {userName}
+            </Link>
+            <button
+              href={"/login"}
+              className="bg-primary border-0 text-white px-8 py-2 rounded-full"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </>
         )}
         {status === "unauthenticated" && (
           <>

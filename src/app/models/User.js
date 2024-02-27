@@ -3,6 +3,7 @@ import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema(
   {
+    name: { type: String },
     email: {
       type: String,
       required: true,
@@ -10,23 +11,10 @@ const UserSchema = new Schema(
     },
     password: {
       type: String,
-      required: true,
-      validate: (password) => {
-        if (!password?.length || password.length < 6) {
-          new Error("Password must be atleast 6 characters.");
-        }
-        return `SKPFO${password}-0`;
-      },
     },
+    image: { type: String }, // Image URL of the user's profile
   },
   { timestamps: true }
 );
 
-UserSchema.post("validate", (user) => {
-  const salt = bcrypt.genSaltSync(10);
-  user.password = bcrypt.hashSync(user.password, salt);
-});
-
-const User = models?.User || model("User", UserSchema);
-
-export { User };
+export const User = models?.User || model("User", UserSchema);
